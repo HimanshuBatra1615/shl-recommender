@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application
 COPY app/ ./app/
 COPY data/ ./data/
+COPY chroma_db/ ./chroma_db/
 
 # Pre-download default ONNX model to avoid download on startup
 RUN python -c "from chromadb.utils import embedding_functions; embedding_functions.DefaultEmbeddingFunction()(['test'])"
